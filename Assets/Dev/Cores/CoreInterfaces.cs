@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+using RottenNoble.Cores.Enum;
+
 namespace RottenNoble.Cores
 {
+    public interface IAppSettingManager 
+    {
+        void SwitchingAppSetting(ApplicationType value);
+    }
+
     public interface IResourceManager
     {
         UniTask<T> LoadAsync<T>(string path, Action<string, float> onProgress = null) where T : UnityEngine.Object;
